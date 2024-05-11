@@ -1,9 +1,10 @@
 body {
-    width: 100vw;
+    width: max(100vw,1512px);
     height: max(100vh, 700px);
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", 
     Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+    display: flex;
 }
 
 .svg {
@@ -15,13 +16,22 @@ body {
     background-color: rgb(249, 246, 243);
     height: max(100%, 700px);
     /* width: max(20%,300px); */
-    width: 250px;
+    width: 300px;
     margin: 0;
     display: flex;
     flex-direction: column;
     padding: 0 15px;
     box-sizing: border-box;
     gap: 20px;
+}
+
+.content {
+    width: max(1262px, 100%);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
 }
 
 .tasks-projects-left {
@@ -40,7 +50,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* margin-bottom: 13px; */
 }
 
 .title {
@@ -68,7 +77,7 @@ body {
 }
 
 .add-task-btn:active {
-    transform: translateY(1px); /* Move the button down by 1px when clicked */
+    transform: translateY(2px); /* Move the button down by 1px when clicked */
     box-shadow: none; 
 }
 
@@ -90,7 +99,6 @@ body {
 
 .all-tasks-btn:hover {
     background-color: rgb(239, 225, 211);
-    /* background-color: rgb(225, 207, 190); */
 }
 
 /* Today button */
@@ -105,7 +113,6 @@ body {
 
 .today-btn:hover {
     background-color: rgb(239, 225, 211);
-    /* background-color: rgb(225, 207, 190); */
 }
 
 /* Overdue button */
@@ -120,7 +127,6 @@ body {
 
 .overdue-btn:hover {
     background-color: rgb(239, 225, 211);
-    /* background-color: rgb(225, 207, 190); */
 }
 
 /* Projects */
@@ -147,7 +153,6 @@ body {
 
 .website-btn:hover {
     background-color: rgb(239, 225, 211);
-    /* background-color: rgb(225, 207, 190); */
 }
 
 .video-btn {
@@ -161,7 +166,6 @@ body {
 
 .video-btn:hover {
     background-color: rgb(239, 225, 211);
-    /* background-color: rgb(225, 207, 190); */
 }
 
 /* create new project button */
@@ -174,5 +178,41 @@ body {
     color: red;
 }
 
+.new-project:active {
+    transform: translateY(2px); /* Move the button down by 1px when clicked */
+    box-shadow: none; 
+}
+
+
+/* All tasks container */
+
+.all-task-container {
+    height: 100%;
+    width: 60%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.taskss {
+    width: 100%;
+    height: 100px;
+    background-color: blue;
+}
+
+.display-mode {
+    width: 100%;
+    height: 200px;
+    /* background-color: aqua; */
+}
+
+.content-container {
+    border-bottom: 2px solid black;
+    height: 150px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
 
 

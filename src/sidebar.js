@@ -33,7 +33,6 @@ function createSidebar () {
 
     const video_img = document.querySelector('.video-btn img');
     video_img.src = folder;
-
 }
 
 export default createSidebar;
