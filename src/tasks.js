@@ -12,8 +12,6 @@ export function allTasksContainer() {
 
     main.appendChild(allTaskContainer);
 
-    const num = document.querySelector('.num');
-    num.innerHTML = 10;
 }
 
 // const container = document.querySelector('.all-task-container');

@@ -86,5 +86,45 @@
                 <!-- <div class="tasks"></div> -->
             </div>
         </main>
+
+        <div class="overlay"></div>
+        <dialog class="add-task-dialog">
+            <div class="dialog-content">
+                <h2 id="add-task-header" class="header">Add Task</h2>
+
+                <form action="example.com/path" method="post" class="add-task-form">
+                    <label for="task_title">Title</label>
+                    <input type="text" id="task_title" name="task_title">
+                
+                    <label for="notes">Notes</label>
+                    <textarea type="text" id="notes" name="notes"></textarea>
+                
+                    <label for="due_date">Due Date</label>
+                    <input type="date" id="due_date" name="due_date">
+            
+                    <label for="priority">Priority</label>
+                    <select id="priority" name="priority"> 
+                        <option value="none"></option>
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+
+                    <label for="project">Project</label>
+                    <select id="project" name="project">
+                        <option value="none"></option>
+                        <option value="project1">Project 1</option>
+                        <option value="project2">Project 2</option>
+                        <option value="project3">Project 3</option>
+                    </select> 
+                </form>
+
+                <div class="form-buttons">
+                    <button type="reset" class="cancel">Cancel</button>
+                    <button type="submit" class="save">Save</button>
+                </div>
+            </div>
+        </dialog>
+
     </body>
 </html>
