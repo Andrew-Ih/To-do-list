@@ -36,17 +36,20 @@ addProjectButton.addEventListener('click', () => {
     overlay.style.display = 'block'; // Display the overlay
 });
 
-// Close the dialog when the cancel button is clicked
-const cancelButton = document.querySelector('.cancel-task');
-cancelButton.addEventListener('click', () => {
-    addTaskDialog.close(); // Close the dialog
-    addProjectDialog.close();
+// Close and reset dialog when the cancel button is clicked
+const cancelTaskButton = document.querySelector('.cancel-task');
+cancelTaskButton.addEventListener('click', () => {
+    const addTaskForm = document.querySelector('.add-task-form'); // Select the "Add Task" form
+    addTaskForm.reset(); // Reset the form
+    addTaskDialog.close(); // Close the "Add Task" dialog
     overlay.style.display = 'none'; // Hide the overlay
 });
 
-const cancelProject = document.querySelector('.cancel-project');
-cancelProject.addEventListener('click', () => {
-    addProjectDialog.close();
+const cancelProjectButton = document.querySelector('.cancel-project');
+cancelProjectButton.addEventListener('click', () => {
+    const addProjectForm = document.querySelector('.add-project-form'); // Select the "Create New Project" form
+    addProjectForm.reset(); // Reset the form
+    addProjectDialog.close(); // Close the "Create New Project" dialog
     overlay.style.display = 'none'; // Hide the overlay
 });
 
