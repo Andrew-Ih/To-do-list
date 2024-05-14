@@ -92,6 +92,10 @@ body {
     box-shadow: none; 
 }
 
+.add-task-btn:hover {
+    color: red;
+}
+
 .add-task-btn img {
     width: 40px;
     height: 40px;
@@ -179,6 +183,19 @@ body {
     background-color: rgb(239, 225, 211);
 }
 
+.project-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-style: none;
+    background-color: rgb(249, 246, 243);
+}
+
+.project-btn:hover {
+    background-color: rgb(239, 225, 211);
+}
+
 /* create new project button */
 .new-project {
     background-color: rgb(249, 246, 243);
@@ -206,16 +223,100 @@ body {
     gap: 10px;
 }
 
-.taskss {
+
+/* EACH TASK DESIGN */
+.task {
     width: 100%;
     height: 100px;
-    background-color: blue;
+    display: flex;
+    border-bottom: 1px solid lightgrey;
 }
+
+.check-box-container {
+    width: 30px; 
+    padding-top: 12px;
+    /* background-color: green; */
+}
+
+.round {
+    position: relative;
+}
+
+.round label {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 28px;
+    width: 28px;
+    left: 0;
+    top: 0;
+    position: absolute;
+}
+
+.round label:after {
+    border: 2px solid #fff;
+    border-top: none;
+    border-right: none;
+    content: "";
+    height: 6px;
+    left: 6px;
+    top: 8px;
+    opacity: 0;
+    position: absolute;
+    transform: rotate(-45deg);
+    width: 12px;
+}
+
+.round input[type="checkbox"] {
+    visibility: hidden;
+}
+
+.round input[type="checkbox"]:checked+label {
+    background-color: #66bb6a;
+    border-color: #66bb6a;
+}
+
+.round input[type="checkbox"]:checked+label:after {
+    opacity: 1;
+}
+
+
+
+.task-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    margin: 10px 10px;
+}
+
+.task-heading {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.task-notes {
+    font-size: 15px;
+}
+
+.task-duedate {
+    border-right: 1px solid black;
+    padding-right: 10px;
+}
+
+.date-project {
+    display: flex;
+    gap: 10px;
+    font-size: 15px;
+    color: red;
+}
+
+
 
 .display-mode {
     width: 100%;
     height: 200px;
-    /* background-color: aqua; */
 }
 
 .content-container {
