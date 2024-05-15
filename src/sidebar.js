@@ -6,10 +6,7 @@ import today from './img/calender.svg';
 import overdue from './img/clock.svg';
 import folder from './img/folder.svg';
 
-const addTaskDialog = document.querySelector('.add-task-dialog');
-const addTaskButton = document.querySelector('.add-task-btn');
 const addProjectDialog = document.querySelector('.add-new-project');
-const addProjectButton = document.querySelector('.new-project');
 const overlay = document.querySelector('.overlay');
 
 export function createSidebar () {
