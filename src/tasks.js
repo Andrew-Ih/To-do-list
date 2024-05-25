@@ -4,6 +4,12 @@ const addTaskDialog = document.querySelector('.add-task-dialog');
 const addProjectDialog = document.querySelector('.add-new-project');
 const overlay = document.querySelector('.overlay');
 
+const numberOfAllTasks = document.querySelector('.all-tasks-num');
+const numberOfTodayTasks = document.querySelector('.today-num');
+const numberOfOverdueTasks = document.querySelector('.overdue-num');
+
+const main = document.querySelector('.content');
+
 let tasks = [];
 
 
@@ -13,18 +19,46 @@ const newTask2 = { title: 'Task 2', notes: 'Do something else', dueDate: '2024-0
 tasks.push(newTask1);
 tasks.push(newTask2);
 
+// numberOfAllTasks.textContent = tasks.length;
 
+
+//******************************************************************************* */
+//Creating the display container for AllTasks, Today and Overdue
+//******************************************************************************* */
 export function allTasksContainer() {
-    const main = document.querySelector('.content');
-
     const allTaskContainer = document.createElement('div');
     allTaskContainer.classList.add('all-task-container');
 
-    const allTaskeHeader = document.querySelector('.content-container h2');
-    allTaskeHeader.innerHTML = "All Tasks (0)";
+    const allTaskHeader = document.querySelector('.content-container h2');
+    numberOfAllTasks.textContent = tasks.length;
+    let AllTasksNum = tasks.length;
+    allTaskHeader.innerHTML = "All Tasks (" + AllTasksNum + ")";
 
     main.appendChild(allTaskContainer);
 }
+
+export function todaysTasksContainer() {
+    const todaysTasksContainer = document.createElement('div');
+    todaysTasksContainer.classList.add('all-task-container');
+
+    const todayHeader = document.querySelector('.content-container h2');
+    let todayNum = tasks.length;
+    todayHeader.innerHTML = "Today (" + todayNum + ")";
+
+    main.appendChild(todaysTasksContainer);
+}
+
+export function overdueTasksContainer() {
+    const overdueContainer = document.createElement('div');
+    overdueContainer.classList.add('all-task-container');
+
+    const overdueHeader = document.querySelector('.content-container h2');
+    let overdueNum = tasks.length;
+    overdueHeader.innerHTML = "Overdue (" + overdueNum + ")";
+
+    main.appendChild(overdueContainer);
+}
+//******************************************************************************* */
 
 export function cancelTaskButton() {
     const cancelTaskButton = document.querySelector('.cancel-task');
@@ -71,6 +105,7 @@ export function saveTaskButton() {
         tasks.push(newTask);
 
         displayTasks();
+        incrementAllTasksNum();
         closeTaskForm()
     });
 }
@@ -141,6 +176,34 @@ export function displayTasks() {
         tasksContainer.appendChild(taskElement);
     });
 }
+
+//******************************************************************************* */
+//Increment the number of tasks for all tasks, today and overdue 
+//******************************************************************************* */
+export function incrementAllTasksNum() {
+    if (numberOfAllTasks) {
+        let currentAllTaskNumber = parseInt(numberOfAllTasks.textContent, 10);
+        currentAllTaskNumber++;
+        numberOfAllTasks.textContent = currentAllTaskNumber;
+    }
+}
+
+export function incrementTodayNum() {
+    if (numberOfTodayTasks) {
+        let currentTodayNumber = parseInt(numberOfTodayTasks.textContent, 10);
+        currentTodayNumber++;
+        numberOfTodayTasks.textContent = currentTodayNumber;
+    }
+}
+
+export function incrementOverdueNum() {
+    if (numberOfOverdueTasks) {
+        let currentOverdueNumber = parseInt(numberOfOverdueTasks.textContent, 10);
+        currentOverdueNumber++;
+        numberOfOverdueTasks.textContent = currentOverdueNumber;
+    }
+}
+//******************************************************************************* */
 
 class Task {
     constructor(title, notes, dueDate, priority, projectKey, complete, key) {
