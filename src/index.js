@@ -46,7 +46,7 @@ addProjectButton.addEventListener('click', () => {
 cancelTaskButton();
 cancelProjectButton();
 saveTaskButton();
-displayTasks();
+// displayTasks();
 
 
 

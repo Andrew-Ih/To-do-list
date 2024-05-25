@@ -35,6 +35,7 @@ export function allTasksContainer() {
     allTaskHeader.innerHTML = "All Tasks (" + AllTasksNum + ")";
 
     main.appendChild(allTaskContainer);
+    displayTasks(tasks, allTaskContainer);
 }
 
 export function todaysTasksContainer() {
@@ -42,10 +43,13 @@ export function todaysTasksContainer() {
     todaysTasksContainer.classList.add('all-task-container');
 
     const todayHeader = document.querySelector('.content-container h2');
-    let todayNum = tasks.length;
+    const today = new Date().toISOString().split('T')[0];
+    const todayTasks = tasks.filter(task => task.dueDate === today);
+    let todayNum = todayTasks.length;
     todayHeader.innerHTML = "Today (" + todayNum + ")";
 
-    main.appendChild(todaysTasksContainer);
+    document.querySelector('.tasks').appendChild(todaysTasksContainer);
+    displayTasks(todayTasks, todaysTasksContainer);
 }
 
 export function overdueTasksContainer() {
@@ -53,10 +57,13 @@ export function overdueTasksContainer() {
     overdueContainer.classList.add('all-task-container');
 
     const overdueHeader = document.querySelector('.content-container h2');
-    let overdueNum = tasks.length;
+    const today = new Date().toISOString().split('T')[0];
+    const overdueTasks = tasks.filter(task => task.dueDate < today);
+    let overdueNum = overdueTasks.length;
     overdueHeader.innerHTML = "Overdue (" + overdueNum + ")";
 
-    main.appendChild(overdueContainer);
+    document.querySelector('.tasks').appendChild(overdueContainer);
+    displayTasks(overdueTasks, overdueContainer);
 }
 //******************************************************************************* */
 
@@ -121,12 +128,68 @@ export function closeTaskForm() {
     overlay.style.display = 'none';
 }
 
-export function displayTasks() {
-    const tasksContainer = document.querySelector('.all-task-container');
-    tasksContainer.innerHTML = ''; 
+// export function displayTasks() {
+//     const tasksContainer = document.querySelector('.all-task-container');
+//     tasksContainer.innerHTML = ''; 
 
-    // Iterate over each task in the tasks array
-    tasks.forEach(task => {
+//     // Iterate over each task in the tasks array
+//     tasks.forEach(task => {
+//         // Create HTML elements for the task
+//         const taskElement = document.createElement('div');
+//         taskElement.classList.add('task');
+
+//         const checkBoxContainer = document.createElement('div');
+//         checkBoxContainer.classList.add('check-box-container');
+
+//         //Create checkbox
+//         const checkBox = document.createElement('div');
+//         checkBox.classList.add('round');
+
+//         const input = document.createElement('input');
+//         input.setAttribute('type', 'checkbox'); 
+//         input.setAttribute('name', 'check-box');
+//         input.setAttribute('id', task.title); 
+
+//         const label = document.createElement('label');
+//         label.setAttribute('for', task.title);
+
+//         checkBox.appendChild(input);
+//         checkBox.appendChild(label);
+
+//         checkBoxContainer.appendChild(checkBox);
+
+//         const taskDetailsContainer = document.createElement('div');
+//         taskDetailsContainer.classList.add('task-details');
+
+//         taskDetailsContainer.innerHTML = `
+//             <div class="task-heading">${task.title}</div>
+//             <div class="task-notes">${task.notes}</div>    
+//         `;
+
+//         const dateAndProject = document.createElement('div');
+//         dateAndProject.classList.add('date-project');
+
+//         dateAndProject.innerHTML = `
+//             <div class="task-duedate">${task.dueDate}</div>
+//             <div class="task_project">${task.project}</div>  
+//         `;
+
+//         taskDetailsContainer.appendChild(dateAndProject);
+
+//         taskElement.appendChild(checkBoxContainer);
+//         taskElement.appendChild(taskDetailsContainer);
+
+//         // Append the task element to the tasks container
+//         tasksContainer.appendChild(taskElement);
+//     });
+// }
+
+export function displayTasks(taskList, container) {
+    
+    container.innerHTML = ''; // Clear previous tasks
+
+    // Iterate over each task in the provided task list
+    taskList.forEach(task => {
         // Create HTML elements for the task
         const taskElement = document.createElement('div');
         taskElement.classList.add('task');
@@ -134,7 +197,7 @@ export function displayTasks() {
         const checkBoxContainer = document.createElement('div');
         checkBoxContainer.classList.add('check-box-container');
 
-        //Create checkbox
+        // Create checkbox
         const checkBox = document.createElement('div');
         checkBox.classList.add('round');
 
@@ -173,7 +236,7 @@ export function displayTasks() {
         taskElement.appendChild(taskDetailsContainer);
 
         // Append the task element to the tasks container
-        tasksContainer.appendChild(taskElement);
+        container.appendChild(taskElement);
     });
 }
 
@@ -229,26 +292,3 @@ function createTask(title, notes, dueDate, priority, projectKey, complete = fals
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const container = document.querySelector('.all-task-container');
-
-// export function addTasks() {
-//     const container = document.querySelector('.all-task-container');
-
-//     const task = document.createElement('div');
-//     task.classList.add('taskss');
-
-//     container.appendChild(task);
-// }
