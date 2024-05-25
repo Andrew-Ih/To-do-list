@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>To do List</title>
+    </head>
+
+    <body>
+        <div class="sidebar">
+            <div class="header">
+                <h1 class="title">Todo List</h1>
+            </div>
+
+            <div class="tasks-container">
+                <div class="add-task">
+                    <button class="add-task-btn">
+                        <img class="svg" >
+                        Add task
+                    </button>
+                </div>
+
+                <div class="all-tasks">
+                    <button class="all-tasks-btn">
+                        <div class="tasks-projects-left">
+                            <img class="svg">
+                            All Tasks
+                        </div>
+                        <div class="num all-tasks-num">0</div>
+                    </button>
+                </div>
+
+                <div class="today">
+                    <button class="today-btn">
+                        <div class="tasks-projects-left">
+                            <img class="svg">
+                            Today
+                        </div>
+                        <div class="num today-num">0</div>
+                    </button>
+                </div>
+
+                <div class="overdue">
+                    <button class="overdue-btn">
+                        <div class="tasks-projects-left">
+                            <img class="svg">
+                            Overdue
+                        </div>
+                        <div class="num overdue-num">0</div>
+                    </button>
+                </div>
+            </div>
+
+            <div class="projects-container">
+                <div class="title-projects tasks-projects-left">My Projects</div>
+
+                <button class="new-project tasks-projects-left">+ Create a new project</button>
+                
+                <div class="website">
+                    <button class="website-btn">
+                        <div class="tasks-projects-left">
+                            <img class="svg">
+                            Website
+                        </div>
+                        <div class="num website-num">0</div>
+                    </button>
+                </div>
+
+                <div class="Video">
+                    <button class="video-btn">
+                        <div class="tasks-projects-left">
+                            <img class="svg">
+                            Video
+                        </div>
+                        <div class="num video-num">0</div>
+                    </button>
+                </div>
+
+                
+            </div>
+
+        </div>
+
+        <main class="content">
+            <div class="content-container">
+                <div class="display-mode"></div>
+                <h2></h2>
+                <div class="tasks"></div>
+            </div>
+        </main>
+
+        <div class="overlay"></div>
+
+        <dialog class="add-task-dialog">
+            <div class="dialog-content">
+                <h2 id="add-task-header" class="header">Add Task</h2>
+
+                <form action="example.com/path" method="post" class="add-task-form">
+                    <label for="task_title">Title</label>
+                    <input type="text" id="task_title" name="task_title">
+                
+                    <label for="notes">Notes</label>
+                    <textarea type="text" id="notes" name="notes"></textarea>
+                
+                    <label for="due_date">Due Date</label>
+                    <input type="date" id="due_date" name="due_date">
+            
+                    <label for="priority">Priority</label>
+                    <select id="priority" name="priority"> 
+                        <option value="none"></option>
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+
+                    <label for="project">Project</label>
+                    <select id="project" name="project">
+                        <option value="none"></option>
+                        <option value="project1">Project 1</option>
+                        <option value="project2">Project 2</option>
+                        <option value="project3">Project 3</option>
+                    </select> 
+                </form>
+
+                <div class="form-buttons">
+                    <button type="reset" class="cancel-task">Cancel</button>
+                    <button type="submit" class="save-task">Save</button>
+                </div>
+            </div>
+        </dialog>
+
+        <dialog class="add-new-project">
+            <div class="dialog-content">
+                <h2 id="add-task-header" class="header">New Project</h2>
+
+                <form action="example.com/path" method="post" class="add-project-form">
+                    <label for="project_title">Project Title</label>
+                    <input type="text" id="project_title" name="project_title">
+                </form>
+
+                <div class="form-buttons">
+                    <button type="reset" class="cancel-project">Cancel</button>
+                    <button type="submit" class="save-project">Save</button>
+                </div>
+            </div>
+        </dialog>
+
+
+    <script defer src="bundle.js"></script></body>
+</html>
