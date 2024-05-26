@@ -41,7 +41,6 @@ body {
     height: 100%;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
 }
 
@@ -216,7 +215,25 @@ body {
 
 .all-task-container {
     height: 100%;
-    width: 50%;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.today-task-container {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.overdue-task-container {
+    height: 100%;
+    width: 100%;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -325,6 +342,14 @@ body {
     width: 50%;
     display: flex;
     flex-direction: column;
+}
+
+.task-container {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    /* background-color: #66bb6a; */
 }
 
 
