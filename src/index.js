@@ -12,6 +12,7 @@ const overlay = document.querySelector('.overlay');
 
 createSidebar();
 allTasksContainer();
+
 // todaysTasksContainer();
 // overdueTasksContainer();
 

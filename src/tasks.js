@@ -20,8 +20,8 @@ let todayTasks = [];
 let overdueTasks = [];
 
 
-const newTask1 = { title: 'Task 1', notes: 'Do something', dueDate: '2024-05-15', priority: 'High', project: 'Project A' };
-const newTask2 = { title: 'Task 2', notes: 'Do something else', dueDate: '2024-05-20', priority: 'Medium', project: 'Project B' };
+const newTask1 = { title: 'Walk the dog', notes: 'go to kings park', dueDate: '2024-05-15', priority: 'High', project: 'Project A' };
+const newTask2 = { title: 'Get groceries', notes: 'get veggies', dueDate: '2024-05-20', priority: 'Medium', project: 'Project B' };
 
 tasks.push(newTask1);
 tasks.push(newTask2);
@@ -49,7 +49,6 @@ initializeTaskArrays();
 //Creating the display container for AllTasks, Today and Overdue
 //******************************************************************************* */
 export function allTasksContainer() {
-    // const allTaskContainer = document.createElement('div');
     allTaskContainer.classList.add('all-task-container');
 
     const allTaskHeader = document.querySelector('.content-container h2');
@@ -63,7 +62,6 @@ export function allTasksContainer() {
 }
 
 export function todaysTasksContainer() {
-    // const todaysTasksContainer = document.createElement('div');
     todaysContainer.classList.add('today-task-container');
 
     const todayHeader = document.querySelector('.content-container h2');
@@ -78,7 +76,6 @@ export function todaysTasksContainer() {
 }
 
 export function overdueTasksContainer() {
-    // const overdueContainer = document.createElement('div');
     overdueContainer.classList.add('overdue-task-container');
 
     const overdueHeader = document.querySelector('.content-container h2');
