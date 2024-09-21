@@ -232,23 +232,13 @@ export function displayTasks(taskArray, tasksContainer) {
             // Remove the task from the tasks array
             tasks.splice(index, 1);
 
-            // // Also remove the task from todayArray if it exists there
-            // const todayIndex = todayArray.findIndex(t => t.title === task.title);
-            // if (todayIndex !== -1) {
-            //     todayArray.splice(todayIndex, 1);
-            // }
-
-            // // Also remove the task from overdueArray if it exists there
-            // const overdueIndex = overdueArray.findIndex(t => t.title === task.title);
-            // if (overdueIndex !== -1) {
-            //     overdueArray.splice(overdueIndex, 1);
-            // }
-
             // Update the task count
             updateTaskCounts();
 
             // Re-display tasks
-            displayTasks(taskArray, tasksContainer);
+            allTasksContainer();
+            // todaysTasksContainer();
+            // overdueTasksContainer();
         });
 
         // Append the content container and delete button to the task element
