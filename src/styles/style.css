@@ -245,7 +245,7 @@ body {
 /* EACH TASK DESIGN */
 .task {
     width: 100%;
-    height: auto;
+    height: 85px;
     padding: 10px 0;
     display: flex;
     justify-content: space-between; /* Space between content and delete button */
@@ -315,6 +315,7 @@ body {
 /* Task details container */
 .task-details {
     display: flex;
+    height: 100%;
     flex-direction: column;
     justify-content: space-between;
     box-sizing: border-box;

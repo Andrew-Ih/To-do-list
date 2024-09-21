@@ -231,14 +231,17 @@ export function displayTasks(taskArray, tasksContainer) {
         deleteButton.addEventListener('click', () => {
             // Remove the task from the tasks array
             tasks.splice(index, 1);
+            todayTasks.splice(index, 1);
+            overdueTasks.splice(index, 1);
 
             // Update the task count
             updateTaskCounts();
 
             // Re-display tasks
+            todaysTasksContainer();
+            overdueTasksContainer();
             allTasksContainer();
-            // todaysTasksContainer();
-            // overdueTasksContainer();
+            
         });
 
         // Append the content container and delete button to the task element
