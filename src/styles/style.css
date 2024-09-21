@@ -242,17 +242,31 @@ body {
 
 
 /* EACH TASK DESIGN */
+/* EACH TASK DESIGN */
 .task {
     width: 100%;
-    height: 100px;
+    height: auto;
+    padding: 10px 0;
     display: flex;
+    justify-content: space-between; /* Space between content and delete button */
+    align-items: center;
     border-bottom: 1px solid lightgrey;
+    box-sizing: border-box;
 }
 
+/* Container for checkbox and task details */
+.task-content-container {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* Allows this container to grow and take up remaining space */
+    height: 100%;
+}
+
+/* Checkbox container */
 .check-box-container {
-    width: 30px; 
+    width: 30px;
     padding-top: 12px;
-    /* background-color: green; */
+    margin-right: 15px; /* Adds space between the checkbox and task details */
 }
 
 .round {
@@ -298,14 +312,12 @@ body {
     opacity: 1;
 }
 
-
-/* *************************************************** */
+/* Task details container */
 .task-details {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     box-sizing: border-box;
-    margin: 10px 10px;
 }
 
 .task-heading {
@@ -315,6 +327,7 @@ body {
 
 .task-notes {
     font-size: 15px;
+    color: #555;
 }
 
 .task-duedate {
@@ -329,6 +342,27 @@ body {
     color: red;
 }
 
+/* Delete button */
+.delete-task {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 20px; /* Adds some space between the delete button and task details */
+}
+
+.delete-task:hover {
+    background-color: darkred;
+}
+
+
 /* *************************************************** */
 
 .display-mode {
@@ -342,6 +376,7 @@ body {
     width: 50%;
     display: flex;
     flex-direction: column;
+    /* background-color: black; */
 }
 
 .task-container {
@@ -349,7 +384,7 @@ body {
     width: 50%;
     display: flex;
     flex-direction: column;
-    /* background-color: #66bb6a; */
+    /* background-color: red; */
 }
 
 

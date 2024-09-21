@@ -170,17 +170,20 @@ export function closeTaskForm() {
 
 export function displayTasks(taskArray, tasksContainer) {
     tasksContainer.innerHTML = ''; 
-    // main.innerHTML = '';     
     // Iterate over each task in the tasks array
-    taskArray.forEach(task => {
+    taskArray.forEach((task, index) => {
         // Create HTML elements for the task
         const taskElement = document.createElement('div');
         taskElement.classList.add('task');
 
+        // Create a container for checkbox and task details
+        const taskContentContainer = document.createElement('div');
+        taskContentContainer.classList.add('task-content-container'); // Flex container for checkbox and details
+
         const checkBoxContainer = document.createElement('div');
         checkBoxContainer.classList.add('check-box-container');
 
-        //Create checkbox
+        // Create checkbox
         const checkBox = document.createElement('div');
         checkBox.classList.add('round');
 
@@ -215,8 +218,42 @@ export function displayTasks(taskArray, tasksContainer) {
 
         taskDetailsContainer.appendChild(dateAndProject);
 
-        taskElement.appendChild(checkBoxContainer);
-        taskElement.appendChild(taskDetailsContainer);
+        // Append the checkbox and task details to the task content container
+        taskContentContainer.appendChild(checkBoxContainer);
+        taskContentContainer.appendChild(taskDetailsContainer);
+
+        // Create delete button
+        const deleteButton = document.createElement('button');
+        deleteButton.classList.add('delete-task');
+        deleteButton.textContent = 'X';
+
+        // Add click event listener to delete the task
+        deleteButton.addEventListener('click', () => {
+            // Remove the task from the tasks array
+            tasks.splice(index, 1);
+
+            // // Also remove the task from todayArray if it exists there
+            // const todayIndex = todayArray.findIndex(t => t.title === task.title);
+            // if (todayIndex !== -1) {
+            //     todayArray.splice(todayIndex, 1);
+            // }
+
+            // // Also remove the task from overdueArray if it exists there
+            // const overdueIndex = overdueArray.findIndex(t => t.title === task.title);
+            // if (overdueIndex !== -1) {
+            //     overdueArray.splice(overdueIndex, 1);
+            // }
+
+            // Update the task count
+            updateTaskCounts();
+
+            // Re-display tasks
+            displayTasks(taskArray, tasksContainer);
+        });
+
+        // Append the content container and delete button to the task element
+        taskElement.appendChild(taskContentContainer);  // Now both checkbox and task details are grouped
+        taskElement.appendChild(deleteButton);          // Delete button goes on the far right
 
         // Append the task element to the tasks container
         tasksContainer.appendChild(taskElement);
