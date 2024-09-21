@@ -4,7 +4,6 @@
 <img width="1512" alt="Screenshot 2024-09-21 at 1 47 01 PM" src="https://github.com/user-attachments/assets/b6085934-d4b5-46d2-a087-e1bb553eea15">
 <img width="1511" alt="Screenshot 2024-09-21 at 1 47 28 PM" src="https://github.com/user-attachments/assets/cfe0d6d8-1a6d-4d27-892e-2b553601736c">
 <img width="1512" alt="Screenshot 2024-09-21 at 1 47 53 PM" src="https://github.com/user-attachments/assets/1f196d82-af8f-4484-88b0-97f7b7ef4cdd">
-<img width="1512" alt="Screenshot 2024-09-21 at 1 48 09 PM" src="https://github.com/user-attachments/assets/69b9e13c-b06d-4287-af6d-d214480e375f">
 
 
 Things left to implement 
