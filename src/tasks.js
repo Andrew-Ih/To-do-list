@@ -238,9 +238,7 @@ export function displayTasks(taskArray, tasksContainer) {
             updateTaskCounts();
 
             // Re-display tasks
-            todaysTasksContainer();
-            overdueTasksContainer();
-            allTasksContainer();
+            reDisplayTasks();
             
         });
 
@@ -253,6 +251,11 @@ export function displayTasks(taskArray, tasksContainer) {
     });
 }
 
+export function reDisplayTasks() {
+    todaysTasksContainer();
+    overdueTasksContainer();
+    allTasksContainer();
+}
 
 //******************************************************************************* */
 //Increment the number of tasks for all tasks, today and overdue 
