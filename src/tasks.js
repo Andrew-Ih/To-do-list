@@ -227,6 +227,7 @@ export function displayTasks(taskArray, tasksContainer) {
         deleteButton.classList.add('delete-task');
         deleteButton.textContent = 'X';
 
+        
         // Add click event listener to delete the task
         deleteButton.addEventListener('click', () => {
             // Remove the task from the tasks array
